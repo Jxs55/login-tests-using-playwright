@@ -9,8 +9,8 @@ const login = new LoginPage(page);
   await login.goto();
     // Login with invalid username
   await login.login("Fake tomsmith", "SuperSecretPassword!");
-    // Verifying user remains on login page (not redirected)
+    
   await expect(page).toHaveURL(/login/);
-  // Invalid username Message
+    // Invalid username Message
   await expect(login.flash).toContainText("Your username is invalid!")
 });
