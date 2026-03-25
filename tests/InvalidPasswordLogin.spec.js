@@ -11,6 +11,8 @@ test('Invalid Password Login', async ({ page }) => {
   await page.getByLabel("Password").fill("fake SuperSecretPassword!")
     // Click the button to login
   await page.getByRole('button').click();
+    // Verifying user remains on login page (not redirected)
+  await expect(page).toHaveURL(/login/);
   // Invalid Password Message
   await expect(page.locator("#flash")).toContainText("Your password is invalid!")
 });

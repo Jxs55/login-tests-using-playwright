@@ -11,6 +11,8 @@ test('Invalid Username Login', async ({ page }) => {
   await page.getByLabel("Password").fill("SuperSecretPassword!")
     // Click the button to login
   await page.getByRole('button').click();
+    // Verifying user remains on login page (not redirected)
+  await expect(page).toHaveURL(/login/);
   // Invalid username Message
   await expect(page.locator("#flash")).toContainText(" Your username is invalid!")
 });
