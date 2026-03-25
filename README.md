@@ -15,6 +15,15 @@ npm install
 ## Run tests
 npx playwright test
 
-## Tech
+## Tech Stack
 - Playwright
 - JavaScript
+
+## Project Structure
+
+- /tests → test cases
+- /pages → page objects (POM)
+
+## Approach
+
+Used Page Object Model (POM) to separate UI logic from test logic.
