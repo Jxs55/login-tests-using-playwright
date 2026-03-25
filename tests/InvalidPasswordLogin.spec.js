@@ -8,9 +8,9 @@ test('Invalid Password Login', async ({ page }) => {
     // Filling the username input with valid username
   await page.getByLabel("Username").fill("tomsmith")
     // Fill the password input with invalid password
-  await page.getByLabel("Password").fill("SuperSecretPassword!")
+  await page.getByLabel("Password").fill("fake SuperSecretPassword!")
     // Click the button to login
   await page.getByRole('button').click();
   // Invalid Password Message
-  await expect(page.locator("#flash")).toContainText("Your password is invalid! ")
+  await expect(page.locator("#flash")).toContainText("Your password is invalid!")
 });
