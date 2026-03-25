@@ -10,7 +10,7 @@ test('Invalid Username Login', async ({ page }) => {
     // Fill the password input with valid password
   await page.getByLabel("Password").fill("SuperSecretPassword!")
     // Click the button to login
-  await page.getByRole('button').click();
+  await page.getByRole('button', { name: 'Login' }).click();
     // Verifying user remains on login page (not redirected)
   await expect(page).toHaveURL(/login/);
   // Invalid username Message

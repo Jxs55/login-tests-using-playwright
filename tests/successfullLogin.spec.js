@@ -7,7 +7,7 @@ test('Successfull Login', async ({ page }) => {
     // Look for the input of Username and Password, fill them with the correct information, and then click at the button to sign in
   await page.getByLabel("Username").fill("tomsmith")
   await page.getByLabel("Password").fill("SuperSecretPassword!")
-  await page.getByRole('button').click();
+  await page.getByRole('button', { name: 'Login' }).click();
     // Expecting the change of url (from /login to /secure)
   await expect(page).toHaveURL(/secure/);
   // Success Message
